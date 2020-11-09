@@ -1,11 +1,8 @@
 import os
 nn_ip = input("Enter the IP of the Hadoop master :- ")
-    os.system("""
-    sudo git clone --quiet https://github.com/Ajaypathak372/arth-team-task1.git > /dev/null
-    sudo cd arth-team-task1
-    bash hadoop
-    """)
+    os.system("bash ~/arth-team-task1/hadoop")
     nn_dir = input("Enter the directory name for hadoop master :-  ")
+    os.system("mkdir -p /{}".format(nn_dir))
     fin = open("hdfs-site.xml", "rt")
     fout = open("/etc/hadoop/hdfs-site.xml", "wt")
     for line in fin:
