@@ -7,7 +7,7 @@
 
 <property>
 <name>dfs.name.dir</name>
-<value>/namenode</value>
+<value>/path</value>
 </property>
 
 </configuration>
