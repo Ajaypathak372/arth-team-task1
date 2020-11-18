@@ -15,6 +15,13 @@ for line in fin:
     fout.write(line.replace('ip', '{}'.format(nn_ip)))
 fin.close()
 fout.close()
-
+print("Formatting the directory of the name node......")
+os.system("hadoop namenode -format")
+print("Starting the NameNode.....")
 os.system("hadoop-daemon.sh start namenode")
-print("Hadoop master(NameNode) Setup Successfully")
+os.system("""
+if jps | grep NameNode
+then echo "Hadoop master(NameNode) Setup Successfully"
+else "Not able to setup NameNode !!!"
+fi
+""")
