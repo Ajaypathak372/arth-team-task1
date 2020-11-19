@@ -167,17 +167,17 @@ def hadoop():
         os.system("tput sgr 0")
         opt_2 = input("Enter your choice :- ")
         if int(opt_2) == 1:
-            os.system("git clone --quiet https://github.com/Ajaypathak372/arth-team-task1.git > /dev/null")
-            os.system("bash ~/arth-team-task1/hadoop")
+            #os.system("git clone --quiet https://github.com/Ajaypathak372/arth-team-task1.git > /dev/null")
+            os.system("bash ./hadoop")
         if int(opt_2) == 2:
             hadoop_master()
         elif int(opt_2) == 3:
             hadoop_slave()
         elif int(opt_2) == 4:
             client_ip = input("Enter the IP of the system which you want to cofigure as Hadoop Client :- ")
-            os.system("git clone --quiet https://github.com/Ajaypathak372/arth-team-task1.git > /dev/null")
-            os.system("scp -r arth-team-task1 {}:/root > /dev/null".format(client_ip))
-            os.system("ssh {0} python3 /root/arth-team-task1/client.py".format(client_ip))
+            #os.system("git clone --quiet https://github.com/Ajaypathak372/arth-team-task1.git > /dev/null")
+            os.system("scp -r ./Hadoop-files/client {}:/root > /dev/null".format(client_ip))
+            os.system("ssh {0} python3 ~/client/client.py".format(client_ip))
         elif int(opt_2) == 5:
             opt_2_4 = input("Enter the NameNode IP or any DataNode IP associated with Hadoop Cluster :- ")
             print("Hadoop Cluster details are ......")
