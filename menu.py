@@ -360,7 +360,7 @@ fi
             """)
             opt_3_3 = int(input("Enter your choice :- "))
             if opt_3_3 == 1:
-                os.system("systenmctl enable docker")
+                os.system("systemctl enable docker")
                 print("Docker services started permanently means docker services will automatically start when system boots")
                 accessories.wait()
             elif opt_3_3 == 2:
@@ -475,6 +475,7 @@ def webserver():
         os.system("tput bold")
         os.system("tput setaf 2")
         print("""
+	Select from the options below\n
         [1] : Install HTTPD Webserver
         [2] : Start/Stop HTTPD services
         [3] : Start/Stop HTTPD services permanently
@@ -637,7 +638,7 @@ def aws_menu():
         os.system("tput bold")
         os.system("tput setaf 2")
         print("""
-        Which service you want to use ?
+        Which service you want to use ?\n
         [1] : Install AWS CLI 
         [2] : Configure AWS CLI with your AWS account
         [3] : EC2
