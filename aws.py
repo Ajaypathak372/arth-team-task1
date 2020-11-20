@@ -170,10 +170,10 @@ def s3():
                 print("Successfully deleted S3 bucket.....")
                 accessories.wait()
             elif int(bucket_ch) == 3:
-                object_name = input("Enter Object name to put inside S3 bucket: ")
+                object_name = input("Enter Object name (with full path) to put inside S3 bucket: ")
                 s3_name = input("Enter S3 Bucket name: ")
                 print("Uploading object....")
-                os.system('aws s3 cp /root/my-workspace-main/{} s3://{} --acl public-read'.format(object_name , s3_name))
+                os.system('aws s3 cp {0} s3://{1} --acl public-read'.format(object_name , s3_name))
                 print("Successfully uploaded object in S3 bucket...")
                 accessories.wait()
             elif int(bucket_ch) == 4:
