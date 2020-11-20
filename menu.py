@@ -277,6 +277,7 @@ def hadoop_master():
     #os.system("ssh {0} python3 -u- < ~/master/master.py".format(nn_ip)")
     os.system("scp -r ./Hadoop-files/master {}:/root > /dev/null".format(nn_ip))
     os.system("ssh {0} python3 ~/master/master.py".format(nn_ip))
+    os.system("rm -rf ~/master")
     accessories.wait()
     
 def hadoop_slave():
@@ -291,6 +292,7 @@ def hadoop_slave():
         os.system("scp -r ./Hadoop-files/slave {}:/root > /dev/null".format(j))
         print("Configuring Datanode {} ".format(j))
         os.system("ssh {0} python3 ~/slave/slave.py".format(j))
+        os.system("rm -rf ~/slave")
     accessories.wait()
 
 def docker():
