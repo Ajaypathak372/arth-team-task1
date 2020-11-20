@@ -169,7 +169,7 @@ def hadoop():
         if int(opt_2) == 1:
             #os.system("git clone --quiet https://github.com/Ajaypathak372/arth-team-task1.git > /dev/null")
             os.system("bash ./hadoop")
-	    accessories.wait()
+            accessories.wait()
         elif int(opt_2) == 2:
             hadoop_master()
         elif int(opt_2) == 3:
