@@ -159,8 +159,8 @@ def hadoop():
         [7] : Read data from hadoop cluster
         [8] : Delete data from hadoop cluster
         [9] : Limit the size of Datanode storage
-        [10] : Stop Hadoop master
-        [11] : Stop Hadoop DataNode
+        [10] : Start/Stop Hadoop master
+        [11] : Start/Stop Hadoop DataNode
         [12] : Return to main menu
         [13] : Exit
         """)
@@ -169,7 +169,7 @@ def hadoop():
         if int(opt_2) == 1:
             #os.system("git clone --quiet https://github.com/Ajaypathak372/arth-team-task1.git > /dev/null")
             os.system("bash ./hadoop")
-        if int(opt_2) == 2:
+        elif int(opt_2) == 2:
             hadoop_master()
         elif int(opt_2) == 3:
             hadoop_slave()
@@ -223,15 +223,43 @@ def hadoop():
             elif limit == 3:
                 continue
         elif int(opt_2) == 10:
-            nn_ip = input("Enter the NameNode IP :- ")
-            os.system("ssh {} hadoop-daemon.sh stop namenode".format(nn_ip))
-            print("NameNode Stopped Successfully")
-            accessories.wait()
+            print("""
+            [1] : Start
+            [2] : Stop
+            [3] : Back
+            """)
+            opt_2_10 = int(input("Enter your choice :- "))
+            if opt_3_2 == 1:
+                nn_ip = input("Enter the NameNode IP :- ")
+                os.system("ssh {} hadoop-daemon.sh start namenode".format(nn_ip))
+                print("NameNode Started Successfully")
+                accessories.wait()
+            elif opt_2_10 == 2:
+                nn_ip = input("Enter the NameNode IP :- ")
+                os.system("ssh {} hadoop-daemon.sh stop namenode".format(nn_ip))
+                print("NameNode Stopped Successfully")
+                accessories.wait()
+            elif opt_2_10 == 3:
+                continue
         elif int(opt_2) == 11:
-            nn_ip = input("Enter the DataNode IP :- ")
-            os.system("ssh {} hadoop-daemon.sh stop datanode".format(nn_ip))
-            print("DataNode Stopped Successfully")
-            accessories.wait()
+            print("""
+            [1] : Start
+            [2] : Stop
+            [3] : Back
+            """)
+            opt_2_11 = int(input("Enter your choice :- "))
+            if opt_3_2 == 1:
+                nn_ip = input("Enter the DataNode IP :- ")
+                os.system("ssh {} hadoop-daemon.sh start datanode".format(nn_ip))
+                print("DataNode Started Successfully")
+                accessories.wait()
+            elif opt_2_11 == 2:
+                nn_ip = input("Enter the DataNode IP :- ")
+                os.system("ssh {} hadoop-daemon.sh stop datanode".format(nn_ip))
+                print("DataNode Stopped Successfully")
+                accessories.wait()
+            elif opt_2_11 == 3:
+                continue
         elif int(opt_2) == 12:
             break
         elif int(opt_2) == 13:
