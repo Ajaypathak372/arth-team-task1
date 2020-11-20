@@ -112,7 +112,7 @@ def ebs():
                 ebs_vid = input("Enter EBS Volume ID to Attach to EC2 Instance: ")
                 ec2_id = input("Enter EC2 Instance ID to attach EBS Volume: ")
                 print("Attaching Volume to instance.....")
-                os.system('aws ec2 attach-volume --volume-id {} --instance-id {} --device /dev/sdf'.format(ebs_vid , ec2_id))
+                os.system('aws ec2 attach-volume --volume-id {} --instance-id {} --device /dev/sdg'.format(ebs_vid , ec2_id))
                 print("Successfully Volume attached to the instance.......")
                 accessories.wait() 
         elif int(vol_ch) == 3:
