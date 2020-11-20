@@ -169,6 +169,7 @@ def hadoop():
         if int(opt_2) == 1:
             #os.system("git clone --quiet https://github.com/Ajaypathak372/arth-team-task1.git > /dev/null")
             os.system("bash ./hadoop")
+	    accessories.wait()
         elif int(opt_2) == 2:
             hadoop_master()
         elif int(opt_2) == 3:
@@ -229,7 +230,7 @@ def hadoop():
             [3] : Back
             """)
             opt_2_10 = int(input("Enter your choice :- "))
-            if opt_3_2 == 1:
+            if opt_2_10 == 1:
                 nn_ip = input("Enter the NameNode IP :- ")
                 os.system("ssh {} hadoop-daemon.sh start namenode".format(nn_ip))
                 print("NameNode Started Successfully")
@@ -248,7 +249,7 @@ def hadoop():
             [3] : Back
             """)
             opt_2_11 = int(input("Enter your choice :- "))
-            if opt_3_2 == 1:
+            if opt_2_11 == 1:
                 nn_ip = input("Enter the DataNode IP :- ")
                 os.system("ssh {} hadoop-daemon.sh start datanode".format(nn_ip))
                 print("DataNode Started Successfully")
